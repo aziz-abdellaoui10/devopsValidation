@@ -33,5 +33,5 @@ pipeline {
                 sh 'docker push aziz1/ski-devops:latest'
             }
         }
-
+    }
 }
