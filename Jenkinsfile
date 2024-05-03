@@ -28,7 +28,7 @@ pipeline {
         }
         stage('Pushing Image') {
             steps {
-                sh 'echo "Express*216" | docker login -u aziz1 --password-zdazizou10'
+                sh 'echo "zdazizou10" | docker login -u aziz1 --password-stdin'
                 sh 'docker tag aziz1/ski aziz1/ski-devops:latest'
                 sh 'docker push aziz1/ski-devops:latest'
             }
