@@ -18,7 +18,7 @@ pipeline {
         }
         stage('Sonarqube') {
             steps {
-                sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=sonar123'
+                sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=sonar'
             }
         }
         stage('Building Image') {
@@ -28,9 +28,9 @@ pipeline {
         }
         stage('Pushing Image') {
             steps {
-                sh 'echo "Express*216" | docker login -u azizabd --password-stdin'
-                sh 'docker tag azizabdellaoui/ski azizabd/ski-devops:latest'
-                sh 'docker push azizabd/ski-devops:latest'
+                sh 'echo "Express*216" | docker login -u aziz1 --password-zdazizou10'
+                sh 'docker tag azizabdellaoui/ski aziz1/ski-devops:latest'
+                sh 'docker push aziz1/ski-devops:latest'
             }
         }
 
