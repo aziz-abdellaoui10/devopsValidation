@@ -18,10 +18,9 @@ pipeline {
         }
         stage('Sonarqube') {
             steps {
-                withSonarQubeEnv(installationName: 'sq1'){
-                    sh './mvnw clean org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.0.2155:sonar'
+                withSonarQubeEnv(installationName: 'sq1'){   
+                    sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=sonar'
                 }
-                //sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=sonar'
             }
         }
         stage('Building Image') {
